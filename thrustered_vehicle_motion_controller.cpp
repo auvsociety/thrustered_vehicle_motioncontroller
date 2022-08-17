@@ -1,4 +1,5 @@
 #include "thrustered_vehicle_motion_controller.h"
+#include  "PID-Controller/PID_controller.h"
 
 void ThrusteredVehicleMotionController::setSurgeControlMode(bool mode){
     linear_control_mode[0] = mode;
