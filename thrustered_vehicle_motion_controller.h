@@ -1,5 +1,6 @@
 #ifndef THRUSTERED_VEHICLE_MOTION_CONTROLLER_H
 #define THRUSTERED_VEHICLE_MOTION_CONTROLLER_H
+#include "vehicle_config.h"
 
 #define CLOSED_LOOP_MODE  0
 #define OPEN_LOOP_MODE    1
@@ -22,6 +23,11 @@ private:
     PIDController surge_controller,sway_controller,heave_controller;
     PIDController yaw_controller, pitch_controller,roll_controller;
 
+    float surge_vector[NUMBER_OF_THRUSTERS] = SURGE_VECTOR, sway_vector[NUMBER_OF_THRUSTERS] = SWAY_VECTOR, heave_vector[NUMBER_OF_THRUSTERS] = HEAVE_VECTOR;
+    float yaw_vector[NUMBER_OF_THRUSTERS]  = YAW_VECTOR,    pitch_vector[NUMBER_OF_THRUSTERS] = PITCH_VECTOR, roll_vector[NUMBER_OF_THRUSTERS] = ROLL_VECTOR;
+    float thrust_vector[NUMBER_OF_THRUSTERS];
+
+
 
     
 public:
@@ -37,13 +43,21 @@ public:
     void setRollControlMode(bool mode);
      
 
-    //Functions to adjust PID for each DoF
-    void setSurgePIDConstants(float p,float i, float d, float integral_limit,float output_limit);
-    void setSwayPIDConstants(float p,float i, float d, float integral_limit,float output_limit);
-    void setHeavePIDConstants(float p,float i, float d, float integral_limit,float output_limit);
-    void setYawPIDConstants(float p,float i, float d, float integral_limit,float output_limit);
-    void setPitchPIDConstants(float p,float i, float d, float integral_limit,float output_limit);
-    void setRollPIDConstants(float p,float i, float d, float integral_limit,float output_limit);
+    //Functions to adjust PID  constants for each DoF
+    void setSurgePIDConstants(float kp,float ki, float kd, float acceptable_error);
+    void setSwayPIDConstants(float kp,float ki, float kd, float acceptable_error);
+    void setHeavePIDConstants(float kp,float ki, float kd, float acceptable_error);
+    void setYawPIDConstants(float kp,float ki, float kd, float acceptable_error);
+    void setPitchPIDConstants(float kp,float ki, float kd, float acceptable_error);
+    void setRollPIDConstants(float kp,float ki, float kd, float acceptable_error);
+
+    //Functions to adjust pid limits in each DoF
+    void setSurgePIDLimits(float output_min,float output_max, float integral_min, float integral_max);
+    void setSwayPIDLimits(float output_min,float output_max, float integral_min, float integral_max);
+    void setHeavePIDLimits(float output_min,float output_max, float integral_min, float integral_max);
+    void setYawPIDLimits(float output_min,float output_max, float integral_min, float integral_max);
+    void setPitchPIDLimits(float output_min,float output_max, float integral_min, float integral_max);
+    void setRollPIDLimits(float output_min,float output_max, float integral_min, float integral_max);
 
     //Functins to set target values in each DoF, Works only if pid mode is enabled
     void setTargetSurgePoint(float point);
