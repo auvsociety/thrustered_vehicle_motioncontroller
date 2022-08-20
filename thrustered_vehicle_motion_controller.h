@@ -1,5 +1,6 @@
 #ifndef THRUSTERED_VEHICLE_MOTION_CONTROLLER_H
 #define THRUSTERED_VEHICLE_MOTION_CONTROLLER_H
+#include  "PID-Controller/PID_controller.h"
 #include "vehicle_config.h"
 
 #define CLOSED_LOOP_MODE  0
@@ -8,17 +9,11 @@
 class ThrusteredVehicleMotionController
 {
 private:
-    float surge_thrust,sway_thrust,heave_thrust;
-    float yaw_thrust,pitch_thrust,roll_thrust;
+    float surge_thrust ,sway_thrust,heave_thrust;
+    float yaw_thrust ,pitch_thrust ,roll_thrust ;
 
     bool surge_control_mode,sway_control_mode,heave_control_mode;
     bool yaw_control_mode,pitch_control_mode,roll_control_mode;
-
-    float current_surge_point,current_sway_point,current_heave_point;
-    float current_yaw_angle,current_pitch_angle,current_roll_angle;
-
-    float target_surge_point,target_sway_point,target_heave_point;
-    float target_yaw_angle,target_pitch_angle,target_roll_angle;
 
     PIDController surge_controller,sway_controller,heave_controller;
     PIDController yaw_controller, pitch_controller,roll_controller;
