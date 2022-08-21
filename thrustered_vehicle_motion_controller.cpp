@@ -37,12 +37,12 @@ ThrusteredVehicleMotionController::ThrusteredVehicleMotionController(/* args */)
     for (int i = 0; i < NUMBER_OF_THRUSTERS; i++)
     {
         thrust_vector[i] = 0;
-        std::cout<<thrust_vector[i]<<std::endl;
     }
     
     
 }
 ThrusteredVehicleMotionController::~ThrusteredVehicleMotionController(/* args */){
+    ThrustersController::shutdown();
 }
 
 void ThrusteredVehicleMotionController::setSurgeControlMode(bool mode){
@@ -412,13 +412,15 @@ void ThrusteredVehicleMotionController::resetAllThrusters(){
     surge_thrust = sway_thrust = heave_thrust = yaw_thrust = pitch_thrust = roll_thrust = 0;
 }
 
+void ThrusteredVehicleMotionController::refresh(){
+    ThrustersController::refresh();
+}
 
  void ThrusteredVehicleMotionController::updateThrustValues(){
 
     for (int i = 0; i < NUMBER_OF_THRUSTERS; i++)
     {
         thrust_vector[i] = (surge_thrust*surge_vector[i]) + (sway_thrust*sway_vector[i]) + (heave_thrust*heave_vector[i]) + (yaw_thrust*yaw_vector[i]) +  (pitch_thrust*pitch_vector[i]) + (roll_thrust*roll_vector[i]);
-        std::cout<<(surge_thrust*surge_vector[i]) <<std::endl;
     }
     ThrustersController::writeThrusterValues(thrust_vector);
  }

@@ -5,5 +5,7 @@
 namespace ThrustersController{
     void init();
     void writeThrusterValues(float* thrust_vector);
+    void refresh();
+    void shutdown();
 }
 #endif

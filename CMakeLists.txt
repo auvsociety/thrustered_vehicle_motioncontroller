@@ -1,0 +1,1 @@
+add_library(thrustered_vehicle_motioncontroller OBJECT thrustered_vehicle_motion_controller.cpp PID-Controller/PID_controller.cpp thrusters_controller/thrusters_controller.cpp) 

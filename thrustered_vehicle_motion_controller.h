@@ -79,6 +79,7 @@ public:
     void setRollThrust(float thrust);
 
     void resetAllThrusters();
+    void refresh();
     void updateThrustValues();
 
 
