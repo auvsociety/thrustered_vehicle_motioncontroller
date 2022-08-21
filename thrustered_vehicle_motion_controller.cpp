@@ -421,6 +421,26 @@ void ThrusteredVehicleMotionController::refresh(){
     for (int i = 0; i < NUMBER_OF_THRUSTERS; i++)
     {
         thrust_vector[i] = (surge_thrust*surge_vector[i]) + (sway_thrust*sway_vector[i]) + (heave_thrust*heave_vector[i]) + (yaw_thrust*yaw_vector[i]) +  (pitch_thrust*pitch_vector[i]) + (roll_thrust*roll_vector[i]);
+        thrust_vector[i] = limitToRange(thrust_vector[i],MIN_THRUST,MAX_THRUST);
     }
     ThrustersController::writeThrusterValues(thrust_vector);
  }
+
+
+float ThrusteredVehicleMotionController::limitToRange(float value, float minimum, float maximum){
+    if (value > maximum)
+    {
+        return maximum;
+    }
+    else if (value < minimum)
+    {
+        return minimum;
+    }
+    else
+    {
+        return value;
+    }
+    
+    
+    
+}

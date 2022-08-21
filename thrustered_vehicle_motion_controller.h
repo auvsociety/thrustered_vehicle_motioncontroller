@@ -82,7 +82,8 @@ public:
     void refresh();
     void updateThrustValues();
 
-
+private:
+   float limitToRange(float value,float minimum,float maximum);
 };
 
 

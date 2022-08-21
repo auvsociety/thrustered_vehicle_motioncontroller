@@ -6,6 +6,9 @@
 #define CLOSED_LOOP_MODE  0
 #define OPEN_LOOP_MODE    1
 
+#define MAX_THRUST       100
+#define MIN_THRUST      -100
+
 //define the vectors for each DoF
 #define SURGE_VECTOR {1,1,1,1,1,1}
 #define SWAY_VECTOR  {1,1,1,1,1,1}
