@@ -54,6 +54,7 @@ GIF courtesy: FFQO.com
       target_link_libraries( ros_node OBJECT thrustered_vehicle_motioncontroller)
 ``` 
  API Usage:
+    
     * This code does not differentiate between any degree of freedom. So, it makes sense to define api usage for a single degree of freedom let's say Surge. this applies equall to remaining 5 Degrees. This library allows the bot to be controlled either using Open loop mode or PID (closed loop mode). The mode should be set manually before using controls on that degree of freedom. Also the updateThrustValues should be called everytime you change any of the thrust values. This can be automatically done, But I have designed it purposely so that the user can change multiple degrees of freedom simultaneously.
     
 ## setSurgeControlMode( bool control_mode ):
