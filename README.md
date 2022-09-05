@@ -8,12 +8,29 @@ This repo implements a C++ based class to control the motion of thrustered vehic
  # Output Method:
    The current version of code, gets command and publishes the PWM values in a topic called /pwm_values in ros. The pwm values range from from 1100 to 1900 meant for BlueRobotics Blue ESC. Depending on your application you can modify the thrusters_controller.cpp file to suit your output method.
    
- # Notations Used:
+ # Terms and Notations Used:
  Certain terms have been used in this code for ease of usage. As i strongly believe that No matter How obvious the terms are, If not defined before usage, They do more harm than good.
  We will define certain terms used to denote different kind of Motion:
- 
+ ![motion_surge_sway_heave](https://user-images.githubusercontent.com/95476939/188468785-ba8f401e-fe0a-43a6-a1b7-d7d45ca949e3.jpg)
+ Image courtesy: Formula one directory
+
+
 ## Surge:
     Linear Motion along X axis.
     
 ![surging-motion-example-surge-movement-on-cargo-ship-at-sea](https://user-images.githubusercontent.com/95476939/188467845-0a946327-43d7-4e03-b25f-b831507bea3e.gif)
 GIF courtesy: FFQO.com
+
+## Sway:
+  Linear motion along Y axis.
+   
+
+## Heave:
+   Linear motion along Z axis.
+
+## Yaw:
+   Rotational motion about Z axis
+## pitch:
+   Rotational motion about Y axis
+## Roll:
+  Rotational motion about X axis
