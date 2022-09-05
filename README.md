@@ -39,7 +39,7 @@ GIF courtesy: FFQO.com
  ## C++ (ROS) :
           Currently i am not providing any prebuilt library, So the user has to build it on his own. Create your own ROS package. Clone this repo on your package/src folder. add this subdirectory. Include the header file and use the API in your code. And finally, In your CMakeLists.txt file, while building your ros node, add this line. For example, you are using this library inside a node called "ros_node".
 ```
-      target_link_libraries( ros_node OBJECT thrustered_vehicle_motion_controller)
+      target_link_libraries( ros_node OBJECT thrustered_vehicle_motioncontroller)
 ```
         
  
@@ -51,7 +51,7 @@ GIF courtesy: FFQO.com
  ## Custom Output :
              Just define your own output function and add this repo as subdirectory  in your own CMake File and  add this line:
 ```
-      target_link_libraries( ros_node OBJECT thrustered_vehicle_motion_controller)
+      target_link_libraries( ros_node OBJECT thrustered_vehicle_motioncontroller)
 ``` 
  API Usage:
     * This code does not differentiate between any degree of freedom. So, it makes sense to define api usage for a single degree of freedom let's say Surge. this applies equall to remaining 5 Degrees. This library allows the bot to be controlled either using Open loop mode or PID (closed loop mode). The mode should be set manually before using controls on that degree of freedom. Also the updateThrustValues should be called everytime you change any of the thrust values. This can be automatically done, But I have designed it purposely so that the user can change multiple degrees of freedom simultaneously.
