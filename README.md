@@ -34,3 +34,19 @@ GIF courtesy: FFQO.com
    Rotational motion about Y axis
 ## Roll:
   Rotational motion about X axis
+ 
+ # Installation :
+ ## C++ (ROS) :
+          * Currently i am not providing any prebuilt library, So the user has to build it on his own. Create your own ROS package. Clone this repo on your package/src folder. add this subdirectory. Include the header file and use the API in your code. And finally, In your CMakeLists.txt file, while building your ros node, add this line. For example, you are using this library inside a node called "ros_node".
+         '''
+         target_link_libraries( ros_node thrustered_vehicle_motion_controller
+         
+         '''
+ 
+      
+ 
+ ## Python (ROS):
+ 
+ ## Custom Output :
+ 
+ 
