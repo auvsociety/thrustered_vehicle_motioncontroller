@@ -1,7 +1,7 @@
 #include <pybind11/pybind11.h>
 namespace py = pybind11;
 
-#include <thrustered_vehicle_motion_controller.h>
+#include "thrustered_vehicle_motion_controller.h"
 
 PYBIND11_PLUGIN(motion_controller) {
 
