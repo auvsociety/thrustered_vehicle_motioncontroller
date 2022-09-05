@@ -72,7 +72,7 @@ GIF courtesy: FFQO.com
               Should be called often so that thruster values get updated in ROS.
              
 # Configuring for custom Vehicles:
-             All the custom values such as default control  mode, thruster combination, no of thrusers for each of the six degree of freedom3 should be modified in the config.h file. Also Number of thrusters, Max pwm and min pwm should be modified in the thrusters_controller.h file.
+             All the custom values such as default control  mode, thruster combination, no of thrusers for each of the six degree of freedom3 should be modified in the vehice_config.h file. Also Number of thrusters, Max pwm and min pwm should be modified in the thrusters_controller.h file.
                
  
    
