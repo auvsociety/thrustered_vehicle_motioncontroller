@@ -39,14 +39,18 @@ GIF courtesy: FFQO.com
  ## C++ (ROS) :
           Currently i am not providing any prebuilt library, So the user has to build it on his own. Create your own ROS package. Clone this repo on your package/src folder. add this subdirectory. Include the header file and use the API in your code. And finally, In your CMakeLists.txt file, while building your ros node, add this line. For example, you are using this library inside a node called "ros_node".
 ```
-      target_link_libraries( ros_node thrustered_vehicle_motion_controller
+      target_link_libraries( ros_node OBJECT thrustered_vehicle_motion_controller)
 ```
         
  
       
  
  ## Python (ROS):
+            Just add this to your ros package src folder and add this as subdirectory in the CMakeLists.txt file inside the src folder. Python Module will be automatically compiled and will be placed in your catkin_ws/devel/lib folder.
  
  ## Custom Output :
- 
+             Just define your own output function and add this repo as subdirectory  in your own CMake File and  add this line:
+```
+      target_link_libraries( ros_node OBJECT thrustered_vehicle_motion_controller)
+``` 
  
