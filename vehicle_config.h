@@ -1,29 +1,29 @@
 #ifndef VEHICLE_CONFIG_H
 #define VEHICLE_CONFIG_H
 
-#define NUMBER_OF_THRUSTERS 6
+#define NUMBER_OF_THRUSTERS 2
 
 #define CLOSED_LOOP_MODE  0
 #define OPEN_LOOP_MODE    1
 
 #define MAX_THRUST       100
-#define MIN_THRUST      -100
+#define MIN_THRUST       0
 
 //define the vectors for each DoF
-#define SURGE_VECTOR {1,1,1,1,1,1}
-#define SWAY_VECTOR  {1,1,1,1,1,1}
-#define HEAVE_VECTOR {1,1,1,1,1,1}
-#define YAW_VECTOR   {1,1,1,1,1,1}
-#define PITCH_VECTOR {1,1,1,1,1,1} 
-#define ROLL_VECTOR  {1,1,1,1,1,1}
+#define SURGE_VECTOR {1,1}
+#define SWAY_VECTOR  {0,0}
+#define HEAVE_VECTOR {0,0}
+#define YAW_VECTOR   {0,0}
+#define PITCH_VECTOR {0,0}
+#define ROLL_VECTOR  {0,0}
 
 //define whether pid loop is enabled, if not the degree of freedom will be controlled manually
 #define SURGE_CONTROL_MODE  OPEN_LOOP_MODE
 #define SWAY_CONTROL_MODE   OPEN_LOOP_MODE
-#define HEAVE_CONTROL_MODE  CLOSED_LOOP_MODE
-#define YAW_CONTROL_MODE    CLOSED_LOOP_MODE
-#define PITCH_CONTROL_MODE  CLOSED_LOOP_MODE
-#define ROLL_CONTROL_MODE   CLOSED_LOOP_MODE
+#define HEAVE_CONTROL_MODE  OPEN_LOOP_MODE
+#define YAW_CONTROL_MODE    OPEN_LOOP_MODE
+#define PITCH_CONTROL_MODE  OPEN_LOOP_MODE
+#define ROLL_CONTROL_MODE   OPEN_LOOP_MODE
 
 //Default PID Constants
 //Surge  
