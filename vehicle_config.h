@@ -10,12 +10,12 @@
 #define MIN_THRUST      -100
 
 //define the vectors for each DoF
-#define SURGE_VECTOR {1,1,1,1,1,1}
-#define SWAY_VECTOR  {1,1,1,1,1,1}
-#define HEAVE_VECTOR {1,1,1,1,1,1}
-#define YAW_VECTOR   {1,1,1,1,1,1}
-#define PITCH_VECTOR {1,1,1,1,1,1} 
-#define ROLL_VECTOR  {1,1,1,1,1,1}
+#define SURGE_VECTOR {1,0,1,1,0,1}
+#define SWAY_VECTOR  {1,0,1,-1,0,-1}
+#define HEAVE_VECTOR {0,1,0,0,1,0}
+#define YAW_VECTOR   {1,0,-1,1,0,-1}
+#define PITCH_VECTOR {0,0,0,0,0,0} 
+#define ROLL_VECTOR  {0,1,0,0,-1,0}
 
 //define whether pid loop is enabled, if not the degree of freedom will be controlled manually
 #define SURGE_CONTROL_MODE  OPEN_LOOP_MODE
