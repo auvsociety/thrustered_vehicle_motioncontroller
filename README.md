@@ -58,7 +58,7 @@ GIF courtesy: FFQO.com
     * This code does not differentiate between any degree of freedom. So, it makes sense to define api usage for a single degree of freedom let's say Surge. this applies equall to remaining 5 Degrees. This library allows the bot to be controlled either using Open loop mode or PID (closed loop mode). The mode should be set manually before using controls on that degree of freedom. Also the updateThrustValues should be called everytime you change any of the thrust values. This can be automatically done, But I have designed it purposely so that the user can change multiple degrees of freedom simultaneously.
     
 ## setSurgeControlMode( bool control_mode ):
-              Changes the control mode, 0 means open loop and 1 means Closed Loop.
+              Changes the control mode, 1 means open loop and 0 means Closed Loop.
 ##  setSurgeThrust( int thrust):
                Changes the thrust value, limits thrust to defined MIN,Max values in config file. Works only in Open Loop Mode.
 ## setTargetSurgePoint[Angle for rotation Degree of Freedoms](float point):
