@@ -39,7 +39,7 @@ GIF courtesy: FFQO.com
  ## Cloning this repository:
            Clone this repo using the following command as it contains submodules:
 ```
-    git clone --recurse-submodules https://github.com/chaconinc/MainProject
+    git clone --recurse-submodules https://github.com/auvsocietyiiitdm/thrustered_vehicle_motioncontroller.git
 ```
  ## C++ (ROS) :
           Currently i am not providing any compiled library, So the user has to compile it on his own. Create your own ROS package. Clone this repo on your package/src folder. Create a CMakeLists.txt file in your_package/src and add src as subdirectory in topmost CMakeLists.txt of your ROS Package. add this as subdirectory in your_package/src/CMakeLists.txt . Include the header file and use the API in your code. And finally, In your CMakeLists.txt file, while building your ros node, add this line. For example, you are using this library inside a node called "ros_node".
