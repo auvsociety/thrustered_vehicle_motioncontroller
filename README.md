@@ -37,7 +37,9 @@ GIF courtesy: FFQO.com
  
  # Installation :
  ## C++ (ROS) :
-          Currently i am not providing any prebuilt library, So the user has to build it on his own. Create your own ROS package. Clone this repo on your package/src folder. Create a CMakeLists.txt file in your_package/src and add src as subdirectory in topmost CMakeLists.txt of your ROS Package. add this as subdirectory in your_package/src/CMakeLists.txt . Include the header file and use the API in your code. And finally, In your CMakeLists.txt file, while building your ros node, add this line. For example, you are using this library inside a node called "ros_node".
+          Currently i am not providing any compiled library, So the user has to compile it on his own. Create your own ROS package. Clone this repo on your package/src folder. Create a CMakeLists.txt file in your_package/src and add src as subdirectory in topmost CMakeLists.txt of your ROS Package. add this as subdirectory in your_package/src/CMakeLists.txt . Include the header file and use the API in your code. And finally, In your CMakeLists.txt file, while building your ros node, add this line. For example, you are using this library inside a node called "ros_node".
+          to learn about ros: http://wiki.ros.org/ROS/Introduction
+          for more info on creating ros packages: http://wiki.ros.org/ROS/Tutorials/CreatingPackage
 ```
       target_link_libraries( ros_node <TARGET_OBJECTS:thrustered_vehicle_motioncontroller>)
 ```
