@@ -63,9 +63,9 @@ GIF courtesy: FFQO.com
               Changes the control mode, 1 means open loop and 0 means Closed Loop.
 ##  setSurgeThrust( int thrust):
                Changes the thrust value, limits thrust to defined MIN,Max values in config file. Works only in Open Loop Mode.
-## setTargetSurgePoint[Angle for rotation Degree of Freedoms](float point):
+## setTargetSurgePoint(float point):
                Sets the target point for closed loop control.
-## setCurrentSurgePoint[Angle for rotation Degree of Freedoms](float point):
+## setCurrentSurgePoint(float point):
                Sets the current point for closed loop control and update the pid values and sets thrust.
 ##  updateThrustValues()
               Updates the Previously set thrust Values
@@ -73,9 +73,10 @@ GIF courtesy: FFQO.com
              Sets  All thruster value to zero.
  ## refresh:
               Should be called often so that thruster values get updated in ROS.
+Note: While calling the above functions for rotational degree of freedoms like roll, pitch, yaw 'Angle' should be used instead of 'Point'.
              
 # Configuring for custom Vehicles:
-             All the custom values such as default control  mode, thruster combination, no of thrusers for each of the six degree of freedom3 should be modified in the vehice_config.h file. Also Number of thrusters, Max pwm and min pwm should be modified in the thrusters_controller.h file.
+             All the custom values such as default control  mode, thruster combination, no of thrusers for each of the six degree of freedom should be modified in the vehice_config.h file. Also Number of thrusters, Max pwm and min pwm should be modified in the thrusters_controller.h file. Then compile the code again.
                
  
    
